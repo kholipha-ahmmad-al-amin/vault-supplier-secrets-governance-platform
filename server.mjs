@@ -1,0 +1,1 @@
+import express from'express';import{secrets}from'./domain.mjs';const d=secrets(),a=express();a.get('/health',(_,r)=>r.json({status:'ok',secrets:d.items.length}));a.listen(Number(process.env.VAULT_PORT)||22000,'0.0.0.0');
